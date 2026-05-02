@@ -2252,6 +2252,7 @@ input[type=checkbox] {
 :root,
 [data-user-color-scheme="light"],
 [data-user-color-scheme="dark"] {
+  --archive-font-family: ui-monospace, "Cascadia Mono", "Cascadia Code", Consolas, "SFMono-Regular", Menlo, Monaco, "Noto Sans Mono", "Microsoft YaHei UI", "PingFang SC", monospace;
   --body-bg-color: #f7f7f2;
   --board-bg-color: #f7f7f2;
   --text-color: #111;
@@ -2274,9 +2275,10 @@ html {
   overflow-y: scroll;
   background: var(--body-bg-color);
   color: var(--text-color);
-  font-family: "Courier New", Courier, "Lucida Console", monospace;
-  font-size: 15px;
+  font-family: var(--archive-font-family);
+  font-size: 16px;
   letter-spacing: 0;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -2284,7 +2286,7 @@ body {
   color: var(--text-color);
   font-family: inherit;
   font-size: 1rem;
-  line-height: 1.55;
+  line-height: 1.68;
 }
 
 a,
@@ -2343,12 +2345,12 @@ a:focus,
   padding: 0;
   color: var(--navbar-text-color);
   font-size: 0;
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
 .navbar .navbar-brand strong::after {
   content: "YanWanWan";
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 700;
 }
 
@@ -2378,7 +2380,7 @@ a:focus,
   padding: 0;
   color: var(--navbar-text-color);
   font-size: 0;
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
 .navbar .nav-item .nav-link i {
@@ -2412,7 +2414,7 @@ a:focus,
 .navbar .nav-link span::after,
 #search-btn .nav-link::after {
   color: var(--post-link-color);
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -2478,7 +2480,7 @@ main > .container.nopadding-x-md #board .col-12.col-md-10.m-auto::before {
   display: block;
   margin: 0 0 1.1rem;
   color: var(--sec-text-color);
-  font-size: 0.95rem;
+  font-size: 0.94rem;
 }
 
 .index-card {
@@ -2509,7 +2511,7 @@ main > .container.nopadding-x-md #board .col-12.col-md-10.m-auto::before {
   color: var(--post-heading-color);
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.62;
 }
 
 .index-header a {
@@ -2521,8 +2523,8 @@ main > .container.nopadding-x-md #board .col-12.col-md-10.m-auto::before {
   grid-row: 1;
   margin: 0;
   color: var(--sec-text-color);
-  font-size: 0.95rem;
-  line-height: 1.55;
+  font-size: 0.94rem;
+  line-height: 1.62;
 }
 
 .index-btm .post-meta {
@@ -2545,7 +2547,7 @@ main > .container.nopadding-x-md #board .col-12.col-md-10.m-auto::before {
   color: var(--post-text-color);
   font-family: inherit;
   font-size: 1rem;
-  line-height: 1.65;
+  line-height: 1.78;
 }
 
 .post-content {
@@ -2554,11 +2556,11 @@ main > .container.nopadding-x-md #board .col-12.col-md-10.m-auto::before {
 
 #seo-header {
   display: block;
-  margin: 0 0 1rem;
+  margin: 0 0 0.95rem;
   color: var(--post-heading-color);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.32;
 }
 
 .markdown-body > h1,
@@ -2571,13 +2573,13 @@ main > .container.nopadding-x-md #board .col-12.col-md-10.m-auto::before {
   color: var(--post-heading-color);
   font-family: inherit;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.34;
 }
 
 .markdown-body h2 {
   padding-bottom: 0.15rem;
   border-bottom: 1px solid var(--line-color);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .markdown-body h3 {
@@ -2642,8 +2644,8 @@ main > .container.nopadding-x-md #board .col-12.col-md-10.m-auto::before {
   gap: 0.4rem;
   margin-bottom: 1rem;
   color: var(--post-link-color);
-  font-size: 0.95rem;
-  line-height: 1.55;
+  font-size: 0.94rem;
+  line-height: 1.62;
 }
 
 .post-back-link i {
@@ -2677,7 +2679,7 @@ main > .container.nopadding-x-md #board .col-12.col-md-10.m-auto::before {
 
 @media (max-width: 767px) {
   html {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .navbar .container {
