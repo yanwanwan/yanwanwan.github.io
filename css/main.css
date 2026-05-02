@@ -2673,6 +2673,10 @@ main > .container.nopadding-x-md #board .col-12.col-md-10.m-auto::before {
   font-family: inherit;
 }
 
+footer {
+  display: none !important;
+}
+
 #scroll-top-button {
   display: none !important;
 }
