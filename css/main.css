@@ -2463,6 +2463,16 @@ main .col-md-10 {
   -webkit-box-shadow: none;
 }
 
+#board > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#board .row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 main > .container.nopadding-x-md #board .col-12.col-md-10.m-auto::before {
   content: "notes, logs, and unfinished thoughts";
   display: block;
@@ -2663,4 +2673,61 @@ main > .container.nopadding-x-md #board .col-12.col-md-10.m-auto::before {
 
 #scroll-top-button {
   display: none !important;
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+
+  .navbar .container {
+    display: block;
+  }
+
+  .navbar .navbar-brand {
+    display: block;
+    margin: 0 0 0.35rem;
+  }
+
+  .navbar .navbar-nav {
+    gap: 0.15rem 0.75rem;
+  }
+
+  main > .container,
+  main .container.nopadding-x-md,
+  main .container-fluid.nopadding-x {
+    padding-right: 0.9rem;
+    padding-left: 0.9rem;
+  }
+
+  #board,
+  #board[style] {
+    padding-top: 1rem;
+  }
+
+  #board .col-12.col-md-10.m-auto,
+  #board .post-content {
+    padding-right: 0.9rem !important;
+    padding-left: 0.9rem !important;
+  }
+
+  .index-info {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+    padding: 0.25rem 0 !important;
+  }
+
+  .index-btm,
+  .index-header {
+    grid-column: 1;
+  }
+
+  .index-btm {
+    grid-row: 1;
+    font-size: 0.9rem;
+  }
+
+  .index-header {
+    grid-row: 2;
+  }
 }
