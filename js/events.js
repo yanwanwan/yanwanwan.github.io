@@ -37,31 +37,8 @@ Fluid.events = {
 
   registerParallaxEvent: function() {
     var ph = jQuery('#banner[parallax="true"]');
-    if (ph.length === 0) {
-      return;
-    }
-    var board = jQuery('#board');
-    if (board.length === 0) {
-      return;
-    }
-    var parallax = function() {
-      var pxv = jQuery(window).scrollTop() / 5;
-      var offset = parseInt(board.css('margin-top'), 10);
-      var max = 96 + offset;
-      if (pxv > max) {
-        pxv = max;
-      }
-      ph.css({
-        transform: 'translate3d(0,' + pxv + 'px,0)'
-      });
-      var sideCol = jQuery('.side-col');
-      if (sideCol) {
-        sideCol.css({
-          'padding-top': pxv + 'px'
-        });
-      }
-    };
-    Fluid.utils.listenScroll(parallax);
+    ph.css({ transform: 'none' });
+    jQuery('.side-col').css({ 'padding-top': '' });
   },
 
   registerScrollDownArrowEvent: function() {
@@ -109,11 +86,38 @@ Fluid.events = {
     });
     // Click
     topArrow.on('click', function() {
-      jQuery('body,html').animate({
-        scrollTop: 0,
-        easing   : 'swing'
-      });
+      jQuery('body,html').scrollTop(0);
     });
+  },
+
+  registerPostBackEvent: function() {
+    var post = document.querySelector('.post-content');
+    if (!post || document.querySelector('.post-back-link')) {
+      return;
+    }
+
+    var back = document.createElement('a');
+    back.className = 'post-back-link';
+    back.href = '/';
+    back.setAttribute('aria-label', '返回');
+    back.innerHTML = '<i class="iconfont icon-arrowleft" aria-hidden="true"></i><span>返回</span>';
+    back.addEventListener('click', function(event) {
+      if (!document.referrer) {
+        return;
+      }
+
+      try {
+        var referrer = new URL(document.referrer);
+        if (referrer.origin === window.location.origin && referrer.href !== window.location.href) {
+          event.preventDefault();
+          window.history.back();
+        }
+      } catch (error) {
+        // Fall back to the home link if the referrer cannot be parsed.
+      }
+    });
+
+    post.insertBefore(back, post.firstChild);
   },
 
   registerImageLoadedEvent: function() {

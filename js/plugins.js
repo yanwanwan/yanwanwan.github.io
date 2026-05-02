@@ -9,25 +9,10 @@ HTMLElement.prototype.wrap = function(wrapper) {
 Fluid.plugins = {
 
   typing: function(text) {
-    if (!('Typed' in window)) { return; }
-
-    var typed = new window.Typed('#subtitle', {
-      strings: [
-        '  ',
-        text
-      ],
-      cursorChar: CONFIG.typing.cursorChar,
-      typeSpeed : CONFIG.typing.typeSpeed,
-      loop      : CONFIG.typing.loop
-    });
-    typed.stop();
     var subtitle = document.getElementById('subtitle');
     if (subtitle) {
-      subtitle.innerText = '';
+      subtitle.innerText = text || '';
     }
-    jQuery(document).ready(function() {
-      typed.start();
-    });
   },
 
   fancyBox: function(selector) {
