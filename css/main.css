@@ -2462,3 +2462,69 @@ main .col-md-10 {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
+
+main > .container.nopadding-x-md #board .col-12.col-md-10.m-auto::before {
+  content: "notes, logs, and unfinished thoughts";
+  display: block;
+  margin: 0 0 1.1rem;
+  color: var(--sec-text-color);
+  font-size: 0.95rem;
+}
+
+.index-card {
+  display: block;
+  margin: 0;
+  padding: 0.2rem 0;
+  border: 0;
+}
+
+.index-card:last-child {
+  border-bottom: 0;
+}
+
+.index-info {
+  display: grid;
+  grid-template-columns: 8.75rem minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: 1rem;
+  max-width: none;
+  padding: 0 !important;
+  flex: 0 0 100%;
+}
+
+.index-header {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  color: var(--post-heading-color);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.index-header a {
+  color: var(--post-link-color);
+}
+
+.index-btm {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  color: var(--sec-text-color);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.index-btm .post-meta {
+  margin-right: 0 !important;
+}
+
+.index-btm i,
+.post-metas i {
+  display: none;
+}
+
+.index-excerpt,
+.index-excerpt__noimg {
+  display: none !important;
+}
