@@ -2239,3 +2239,226 @@ input[type=checkbox] {
     margin-left: 1rem;
   }
 }
+
+/* Unix document archive overrides */
+*,
+*::before,
+*::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+:root,
+[data-user-color-scheme="light"],
+[data-user-color-scheme="dark"] {
+  --body-bg-color: #f7f7f2;
+  --board-bg-color: #f7f7f2;
+  --text-color: #111;
+  --sec-text-color: #555;
+  --post-text-color: #111;
+  --post-heading-color: #111;
+  --post-link-color: #0000ee;
+  --link-hover-color: #0000ee;
+  --link-hover-bg-color: transparent;
+  --line-color: #b8b8ae;
+  --navbar-bg-color: #f7f7f2;
+  --navbar-text-color: #111;
+  --subtitle-color: #111;
+  --scrollbar-color: #999;
+  --scrollbar-hover-color: #777;
+  --button-hover-bg-color: transparent;
+}
+
+html {
+  overflow-y: scroll;
+  background: var(--body-bg-color);
+  color: var(--text-color);
+  font-family: "Courier New", Courier, "Lucida Console", monospace;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+body {
+  background: var(--body-bg-color);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+a,
+.markdown-body a {
+  color: var(--post-link-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover,
+a:focus,
+.markdown-body a:hover,
+.markdown-body a:focus {
+  color: var(--post-link-color);
+  background: transparent;
+  text-decoration-thickness: 2px;
+  outline: none;
+}
+
+.header-inner {
+  height: auto !important;
+  min-height: 0;
+  max-height: none;
+}
+
+.banner,
+.banner[parallax="true"],
+.banner .mask,
+.banner-text,
+.typed-cursor,
+.scroll-down-bar,
+#nprogress {
+  display: none !important;
+}
+
+.navbar,
+.navbar.scrolling-navbar,
+.navbar.scrolling-navbar.top-nav-collapse {
+  position: static;
+  padding: 1rem 0 0.65rem;
+  background: var(--navbar-bg-color);
+  border-bottom: 1px solid var(--line-color);
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.navbar .container {
+  max-width: 760px;
+  align-items: flex-start;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.navbar .navbar-brand {
+  margin-right: 1.25rem;
+  padding: 0;
+  color: var(--navbar-text-color);
+  font-size: 0;
+  line-height: 1.55;
+}
+
+.navbar .navbar-brand strong::after {
+  content: "YanWanWan";
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.navbar .navbar-toggler {
+  display: none;
+}
+
+.navbar .navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+}
+
+.navbar .navbar-nav {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.2rem 0.85rem;
+  margin-left: 0 !important;
+  text-align: left !important;
+}
+
+.navbar .nav-item {
+  margin: 0;
+}
+
+.navbar .nav-item .nav-link {
+  padding: 0;
+  color: var(--navbar-text-color);
+  font-size: 0;
+  line-height: 1.55;
+}
+
+.navbar .nav-item .nav-link i {
+  display: none;
+}
+
+.navbar .nav-item .nav-link span {
+  font-size: 0;
+}
+
+.navbar .nav-link[href="/"] span::after {
+  content: "home";
+}
+
+.navbar .nav-link[href="/archives/"] span::after {
+  content: "archives";
+}
+
+.navbar .nav-link[href="/categories/"] span::after {
+  content: "categories";
+}
+
+.navbar .nav-link[href="/tags/"] span::after {
+  content: "tags";
+}
+
+.navbar .nav-link[href="/about/"] span::after {
+  content: "about";
+}
+
+.navbar .nav-link span::after,
+#search-btn .nav-link::after {
+  color: var(--post-link-color);
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#search-btn .nav-link::after {
+  content: "search";
+}
+
+#color-toggle-btn {
+  display: none;
+}
+
+main > .container,
+main .container.nopadding-x-md,
+main .container-fluid.nopadding-x {
+  max-width: 760px;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+main .container-fluid.nopadding-x > .row {
+  display: block;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.side-col {
+  display: none !important;
+}
+
+main .col-lg-8,
+main .col-lg-10,
+main .col-12,
+main .col-md-10 {
+  max-width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  flex: 0 0 100%;
+}
+
+#board,
+#board[style] {
+  margin-top: 0 !important;
+  padding: 1.25rem 0 2.5rem;
+  background: var(--board-bg-color);
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
